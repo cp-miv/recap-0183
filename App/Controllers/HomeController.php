@@ -2,17 +2,17 @@
 
 namespace App\Controllers;
 
-class HomeController
-{
-    public function __construct() {}
+use App\Models\Friend;
 
+class HomeController extends AppController
+{
     public function index()
     {
-        echo 'Bonjour from Home index';
+        $this->view['friends'] = Friend::getAll();
     }
 
     public function getById()
     {
-        echo 'Bonjour from Home view avec l\'id ' . $_GET['id'];
+        $this->view['friend'] = Friend::find($_GET['id']);
     }
 }

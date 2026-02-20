@@ -20,7 +20,9 @@ class Router
         $className = ucfirst($className);
         $className = "App\\Controllers\\{$className}Controller";
 
-        $controller = new $className();
+        $controller = new $className($urlParts);
+        $controller->before();
         $controller->$methodName();
+        $controller->after();
     }
 }
