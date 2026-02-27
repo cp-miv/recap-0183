@@ -22,6 +22,11 @@ class Friend
         return $friend;
     }
 
+    public static function add(array $friend): void
+    {
+        self::getDB()->query("INSERT INTO `Friend` (`firstname`, `lastname`) VALUES ('{$friend['firstname']}', '{$friend['lastname']}')");
+    }
+
     protected static function getDB(): PDO
     {
         $pdo = new PDO('mysql:host=db;port=3306;dbname=reactivations;charset=utf8', 'root', '123456', [

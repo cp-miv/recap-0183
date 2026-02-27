@@ -6,7 +6,7 @@ namespace App\Models;
 
 use PDO;
 
-class Friend
+class Shop
 {
     public static function getAll(): array
     {

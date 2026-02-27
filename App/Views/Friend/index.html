@@ -1,0 +1,28 @@
+<?php if (!empty($friends)): ?>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Prenom</th>
+        <th>Nom</th>
+    </thead>
+    <tbody>
+        <?php foreach ($friends as $friend): ?>
+        <tr>
+            <td>
+                <?= $friend['id'] ?>
+            </td>
+            <td>
+                <?= $friend['firstname'] ?>
+            </td>
+            <td>
+                <?= $friend['lastname'] ?>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<?php else: ?>
+<p>No friend</p>
+<?php endif; ?>
+
+<a href="./add">Ajouter</a>
